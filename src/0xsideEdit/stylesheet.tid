@@ -1,0 +1,89 @@
+title: $:/plugins/Speff/0xsideEdit/stylesheet
+
+/*
+ * In-macro styles, i.e called from within the SideEditor macro, when that is active.
+ * Do NOT tag it $:/tags/Stylesheet as that would make it permanently active.
+ * Do NOT enclose in pre tags.
+ */
+
+
+/* Hide regular sidebar scrollbar */
+.tc-sidebar-scrollable {overflow:hidden !important;}
+.tc-sidebar-scrollable:hover {overflow-y:auto !important;}
+
+/* Prioritize access to sidebar or river when they're hovered */
+.tc-sidebar-scrollable:hover,
+ .tc-story-river > .tc-tiddler-frame:hover {
+  z-index:2002;
+}
+.tc-sidebar-scrollable:hover {
+  overflow-x:hidden;
+  right: 20px; /* access SE */
+}
+@media (min-width:{{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
+  .tc-sidebar-scrollable:hover {
+    max-width:{{$:/themes/tiddlywiki/vanilla/metrics/sidebarwidth}};
+    border-right:1em solid transparent; /* hover margin*/
+    top:42px; /* access to top bar */
+    <$list filter="[{$:/themes/tiddlywiki/vanilla/options/sidebarlayout}match[fluid-fixed]]">
+       position:fixed;
+       padding-left:62px; /* 42default+20for access to SE */
+    </$list>
+  }
+  .tc-sidebar-scrollable:hover > div { margin-top:-42px;
+  }
+}
+@media (max-width:{{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
+  .tc-sidebar-scrollable:hover {
+    position:relative;
+    border-right:none;
+    margin-left:20px;
+    <$list filter="[{$:/themes/tiddlywiki/vanilla/options/sidebarlayout}match[fluid-fixed]]">
+       max-width:calc(100vw - 40px); /*access SE*/
+    </$list>
+  }
+}
+
+.tc-sidebar-scrollable:hover .tc-sidebar-header {
+  background:<<colour page-background>>;
+}
+@media (min-width:{{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
+  .tc-sidebar-scrollable:hover .tc-sidebar-header {
+    padding-left:1em;
+    margin-left:-1em;
+  }
+}
+/* lower sidebar area hazed out to indicate it blocks typing into SE */
+.tc-sidebar-scrollable:hover:after {
+  position: absolute;
+  z-index:-1;
+  height:calc(100vh - 3em);
+  width:calc(100% - .5em);
+  top:0;
+  content: ' ';
+  margin-left:-1em;
+  background:<<colour page-background>>;
+  <$set name=bg value={{{ [{$:/palette}getindex[page-background]prefix[#]addsuffix[66]] }}}>
+    background: <<bg>>; /* 40% transparency */
+  </$set>
+  box-shadow: inset -1px 0px 0px 0px <<colour page-background>>, inset 1px 0px 0px 0px <<colour page-background>>;
+}
+.tc-sidebar-tabs:after { /* Border below sidebar lists */
+  content:" ";
+  height:1em;
+  width:100%;
+  margin-left:-1em;
+  background:<<colour page-background>>;
+  margin-top:-3px;
+  position:absolute;
+  border-bottom:1px solid <<color sidebar-tab-background>>;
+}
+/*****************************************/
+
+/* Chrome adds ugly usability outline on the tiddler tool button */
+.tc-titlebar button.tc-btn-invisible:focus  {outline:none;}
+
+/* Unclear why *some* SE content causes page horiz scrollbar */
+body {overflow-x:hidden;}
+
+.tc-notification {z-index:2300;}

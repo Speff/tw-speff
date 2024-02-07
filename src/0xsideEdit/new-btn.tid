@@ -1,0 +1,28 @@
+title: $:/plugins/Speff/0xsideEdit/new-btn
+tags: $:/tags/PageControls
+caption: {{$:/plugins/Speff/0xsideEdit/new-icon}} new tiddler
+description: Create "New tiddler" in 0xsideEdit
+
+\whitespace trim
+<$button
+   tooltip={{$:/language/Buttons/NewTiddler/Hint}}
+   aria-label={{$:/language/Buttons/NewTiddler/Caption}}
+   class=<<tv-config-toolbar-class>>
+>
+<$list filter="[<tv-config-toolbar-icons>match[yes]]">
+   {{$:/plugins/Speff/0xsideEdit/new-icon}}
+</$list>
+<$list filter="[<tv-config-toolbar-text>match[yes]]">
+   <span class="tc-btn-text">
+      <$text text={{$:/language/Buttons/NewTiddler/Caption}}/>
+   </span>
+</$list>
+<$action-setfield $tiddler="$:/state/0xsideEdit"
+   display="block"
+   text=<<unusedtitle>>
+/>
+<$action-deletetiddler
+   $tiddler="$:/temp/0xsideEdit/macrotext"
+/>
+<$action-navigate $to=<<unusedtitle>>/>
+</$button>

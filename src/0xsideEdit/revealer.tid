@@ -1,0 +1,4 @@
+title: $:/plugins/Speff/0xsideEdit/revealer
+tags: $:/tags/PageTemplate
+
+<<sideeditor {{$:/state/0xsideEdit}}>>

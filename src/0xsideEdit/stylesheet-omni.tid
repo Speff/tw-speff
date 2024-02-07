@@ -1,0 +1,183 @@
+title: $:/plugins/Speff/0xsideEdit/stylesheet-omni
+tags: $:/tags/Stylesheet
+display: none
+left: 46
+peek: 1px
+top: 17
+z-index: 2000
+
+<pre>
+#sideeditor {
+  display:block;
+  /** display:{{$:/state/0xsideEdit!!display}};**/
+}
+#se-main {
+  position:fixed;
+  z-index:2001;
+  top:{{$:/plugins/Speff/0xsideEdit/metrics!!top}}vh;
+  left:{{$:/plugins/Speff/0xsideEdit/metrics!!left}}vw;
+  right:0px;
+  height:0;
+}
+
+/********** TOOLBAR *********/
+.se-toolbar {
+  background:<<colour background>>;
+  border:1px solid silver;
+  height:2.3em;
+}
+.se-toolbar-title {
+  display:inline-block;
+  white-space:nowrap;
+  width:auto !important;
+}
+.se-toolbar-btns {
+  position:absolute;
+  background:<<colour background>>;
+  margin:1px;
+}
+.se-toolbar-btns.se-right {
+  right:0;
+  padding-right:2em;
+  margin-right:2px;
+}
+.se-toolbar-btns.se-left {
+}
+.se-toolbar-btns.se-right:before { /* Fade title if covered */
+  position:absolute; margin-top:1px;
+  content:" ";
+  min-width:1em; margin-left:-1em;
+  height:90%;
+  background:linear-gradient(90deg, transparent 0%, <<colour
+  background>> 100%);
+}
+.se-toolbar-btns button {
+  width:3em; height:2em;
+  fill:<<colour tiddler-controls-foreground>>;
+  background:transparent;
+  border:0;
+  margin:0px 0 0 -4px;
+}
+.se-toolbar-btns button:hover svg {
+  fill: <<colour tiddler-controls-foreground-hover>>;
+}
+.se-toolbar-btns button:active,
+ .se-toolbar-btns button:focus { outline:0;
+}
+
+/********** EDITOR AREA **********/
+
+/* In a table cos textarea don't allow pseudo elements for hover margin. */
+.se-editor-table,
+ .se-editor-table tr,
+ .se-editor-table td {padding:0; margin:0; border:0;
+}
+.se-editor-table {
+  margin-left:-1.5em;
+x min-width:calc(100% + 1.5em);
+  background:transparent;
+}
+.se-editor-table:after {
+  position:absolute;
+  content:"";
+  width:100%;
+  height:1em;
+}
+.se-editor,
+ .se-editor-placeholder {
+  min-height:100px;
+  padding:5px; padding-bottom:1em;
+  max-height:calc(100vh - {{$:/plugins/Speff/0xsideEdit/metrics!!top}}vh - 2.3em);
+  width:calc(100vw - {{$:/plugins/Speff/0xsideEdit/metrics!!left}}vw - 1.2em);
+  vertical-align:top;
+}
+.se-editor {
+  resize:none;  /* remove to get resize */
+  margin-bottom:-5px;
+  border:1px solid darkgrey;
+  border-top:0;
+}
+.se-editor-placeholder {
+  color:silver;
+  background:<<colour background>>;
+}
+
+/********** RESIZING SLIDERS ************/
+
+.se-slider-top { /* Covers/hides eventual sidebar scrollbar */
+  position:fixed;
+  transform:rotate(90deg);
+  width:100vh !important;
+  height:22px; /* width to cover sidebar scrollbar */
+  right:calc(-50vh + 10px);
+  bottom:50vh;
+  background: <<colour page-background>> !important;
+  border:none;
+}
+.se-slider-left {
+  position:fixed;
+  left:.5em;
+  z-index:2003;
+  bottom:2vmin;
+  width:100%; /* MS can't handle vmax here */
+  border:none;
+}
+
+/*** CRED: https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/ ***/
+
+/** Applying base styles *******************/
+
+.se-sliders input[type=range] { /* for FF */
+  -webkit-appearance: none; width: 100%; background:transparent; }
+.se-sliders input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; }
+.se-sliders input[type=range]:focus { outline: none; }
+
+/** Styling the Thumb ***********************/
+
+/* Special styling for WebKit/Blink */
+.se-sliders input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  box-shadow: inset 4px 0px 0px silver, 0px 0px 0px #000000;
+  border: 0px;  border-radius: 0px;
+  height: 20px; width: 6px;
+  background: transparent;
+  cursor: pointer;
+}
+.se-sliders input[type=range]::-webkit-slider-thumb:hover {
+  border:3px solid silver;
+}
+
+/* All the same stuff for Firefox */
+.se-sliders input[type=range]::-moz-range-thumb {
+  box-shadow: inset 4px 0px 0px silver, 0px 0px 0px #000000;
+  border: 0;  border-radius: 0px;
+  height: 20px; width: 6px;
+  background: transparent;
+  cursor: pointer;
+}
+.se-sliders input[type=range]::-moz-range-thumb:hover {
+  border:3px solid silver;
+}
+
+/* All the same stuff for IE */
+.se-sliders input[type=range]::-ms-thumb {
+  box-shadow: inset 4px 0px 0px silver, 0px 0px 0px #000000;
+  border: 0px solid blue;  border-radius: 0px;
+  /* height: 20px; width: 16px; */
+  background: transparent;
+  cursor: pointer;
+}
+.se-sliders input[type=range]::-ms-thumb:hover {
+  border:3px solid silver;
+}
+/** Styling the Track *************************/
+
+.se-sliders input[type=range]::-webkit-slider-runnable-track {
+  width: 100%; height: 1px; margin-top:-10px;
+}
+.se-sliders input[type=range]::-moz-range-track { height: 0px;
+}
+.se-sliders input[type=range]::-ms-track{ height: 1px; margin-top:-10px;
+}
+
+</pre>

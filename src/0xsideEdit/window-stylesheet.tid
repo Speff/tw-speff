@@ -1,0 +1,91 @@
+title: $:/plugins/Speff/0xsideEdit/window-stylesheet
+tags: $:/tags/Stylesheet
+
+<pre>
+@media (min-width: 960px) {
+  .se-window .se-toolbar         { border:0; z-index:1}
+  .se-window .se-toolbar *       { visibility:hidden; }
+  .se-window .se-toolbar:hover * { visibility:visible; }
+  .se-window .se-editor,
+   .se-window td.se-editor-placeholder {
+    position:fixed; left:0;
+    min-height:100vh !important;
+    width:100vw;
+    padding:4em 25% !important;
+    top:0; bottom:0  !important;
+  }
+  .se-window .se-editor, .se-window .se-editor:active, .se-window .se-editor:focus {
+   border:0; outline:0; }
+  .se-window .se-sliders { display:none; }
+  .se-window .se-editor {width:100vw !important;
+  }
+  .se-window .se-editor {
+  }
+  .se-window > .se-toolbar { background:transparent; max-width:calc(100vw - 2em);
+  }
+  .se-window > .se-toolbar:hover {background:<<colour background>>;
+  }
+  .se-window .se-toolbar:after {
+    content:"";
+    position:absolute; top:0em; z-index:-1;
+    width:100%; height:2em;
+    display:block;
+    background:linear-gradient(0deg, transparent 0%, <<colour background>> 100%);
+ }
+}
+
+.se-window {
+  position:fixed;
+  top:0; left:0; right:0; bottom:0;
+}
+
+/**** TOOLBAR ****/
+.se-window > .se-toolbar {
+  position:fixed; top:0; left:0; right:0;
+  border-width:0px; border-bottom-width:1px;
+}
+.se-window .se-toolbar-title { margin-left:5px;
+}
+.se-window .se-toolbar-btns.se-right { padding:0;
+}
+.se-window .se-toolbar-btns.se-left button { float:left;
+}
+
+/***** EDITOR *****/
+.se-window .se-editor-table {
+  margin-left:0;
+  margin-top:2em;
+  border:0;
+  width:100%;
+  background:transparent;
+}
+.se-window .se-editor-table:after {display:none;
+}
+.se-window-table tr, .se-window-table td {
+  border:0; padding:0;
+}
+.se-window .se-editor,
+ .se-window .se-editor-placeholder {
+  height:100vh !important;
+  width:100vw;
+  padding:5px;
+  left:0;
+}
+.se-window .se-editor {
+  outline:0; border:0;
+  min-height:calc(100vh - 3em);
+  background:transparent !important;
+}
+.se-window .se-editor-placeholder {
+  position:absolute;
+  z-index:-1;
+  overflow:hidden;
+  white-space:nowrap;
+  display:none; /* default */
+}
+<$list filter="""[{$:/state/SideEditor}!has[title]]""">
+<$list filter="""[{$:/state/SideEditor!!newtid}match[yes]] [<currentTiddler>is[missing]] +[first[]then{$:/state/SideEditor}]""">
+.se-window .se-editor-placeholder { display:table-cell; }
+</$list>
+</$list>
+</pre>
