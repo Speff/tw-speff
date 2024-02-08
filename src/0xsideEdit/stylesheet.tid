@@ -1,4 +1,4 @@
-title: $:/plugins/Speff/0xsideEdit/stylesheet
+title: $:/plugins/Speff/SideEditorV2/stylesheet
 
 /*
  * In-macro styles, i.e called from within the SideEditor macro, when that is active.

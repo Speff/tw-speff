@@ -1,4 +1,4 @@
-title: $:/plugins/Speff/0xsideEdit/stylesheet-omni
+title: $:/plugins/Speff/SideEditorV2/stylesheet-omni
 tags: $:/tags/Stylesheet
 display: none
 left: 46
@@ -9,13 +9,13 @@ z-index: 2000
 <pre>
 #sideeditor {
   display:block;
-  /** display:{{$:/state/0xsideEdit!!display}};**/
+  /** display:{{$:/state/SideEditorV2!!display}};**/
 }
 #se-main {
   position:fixed;
   z-index:2001;
-  top:{{$:/plugins/Speff/0xsideEdit/metrics!!top}}vh;
-  left:{{$:/plugins/Speff/0xsideEdit/metrics!!left}}vw;
+  top:{{$:/plugins/Speff/SideEditorV2/metrics!!top}}vh;
+  left:{{$:/plugins/Speff/SideEditorV2/metrics!!left}}vw;
   right:0px;
   height:0;
 }
@@ -87,8 +87,8 @@ x min-width:calc(100% + 1.5em);
  .se-editor-placeholder {
   min-height:100px;
   padding:5px; padding-bottom:1em;
-  max-height:calc(100vh - {{$:/plugins/Speff/0xsideEdit/metrics!!top}}vh - 2.3em);
-  width:calc(100vw - {{$:/plugins/Speff/0xsideEdit/metrics!!left}}vw - 1.2em);
+  max-height:calc(100vh - {{$:/plugins/Speff/SideEditorV2/metrics!!top}}vh - 2.3em);
+  width:calc(100vw - {{$:/plugins/Speff/SideEditorV2/metrics!!left}}vw - 1.2em);
   vertical-align:top;
 }
 .se-editor {

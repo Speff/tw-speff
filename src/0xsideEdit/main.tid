@@ -1,9 +1,9 @@
-title: $:/plugins/Speff/0xsideEdit/main
+title: $:/plugins/Speff/SideEditorV2/main
 tags: $:/tags/Macro
 
 \procedure se-resizer(field)
 <div class="se-sliders">
-<$range tiddler="$:/plugins/Speff/0xsideEdit/metrics" field=<<field>> class=`se-slider-$(field)$`/>
+<$range tiddler="$:/plugins/Speff/SideEditorV2/metrics" field=<<field>> class=`se-slider-$(field)$`/>
 </div>
 \end
 
@@ -12,20 +12,25 @@ tags: $:/tags/Macro
 <$set name=t_tags filter="[<toedit>get[text]splitregexp[\n]]" select="1">
 <$set name=t_text filter="[<toedit>get[text]removeprefix<t_title>trim[]removeprefix<t_tags>trim[]join[ ]]" select="0">
 <% if [<t_title>split[]nth[1]] %>
-    <% if [[$:/plugins/Speff/0xsideEdit/configs/clashoverwrite]get[text]] %>
-    <$action-sendmessage $message="tm-rename-tiddler" from=<<toedit>> to=<<t_title>> />
-    <$action-setfield $tiddler=<<t_title>> tags=<<t_tags>> text=<<t_text>> type={{$:/plugins/Speff/0xsideEdit/configs/content-type}}/>
+    <% if [<t_title>get[title]] %>
+        <% if [[$:/plugins/Speff/SideEditorV2/configs/clashoverwrite]get[text]] %>
+            <$action-sendmessage $message="tm-rename-tiddler" from=<<toedit>> to=<<t_title>> />
+            <$action-setfield $tiddler=<<t_title>> tags=<<t_tags>> text=<<t_text>> type={{$:/plugins/Speff/SideEditorV2/configs/content-type}}/>
+        <% else %>
+            <$action-setfield $tiddler=<<toedit>> tags=<<t_tags>> text=<<t_text>> type={{$:/plugins/Speff/SideEditorV2/configs/content-type}}/>
+        <% endif %>
     <% else %>
-    <$action-setfield $tiddler=<<toedit>> tags=<<t_tags>> text=<<t_text>> type={{$:/plugins/Speff/0xsideEdit/configs/content-type}}/>
+        <$action-sendmessage $message="tm-rename-tiddler" from=<<toedit>> to=<<t_title>> />
+        <$action-setfield $tiddler=<<t_title>> tags=<<t_tags>> text=<<t_text>> type={{$:/plugins/Speff/SideEditorV2/configs/content-type}}/>
     <% endif %>
 <% else %>
-<$action-setfield $tiddler=<<toedit>> tags=<<t_tags>> text=<<t_text>> type={{$:/plugins/Speff/0xsideEdit/configs/content-type}}/>
+    <$action-setfield $tiddler=<<toedit>> tags=<<t_tags>> text=<<t_text>> type={{$:/plugins/Speff/SideEditorV2/configs/content-type}}/>
 <% endif %>
 </$set></$set></$set>
 \end
 
 \procedure checkif-newtid(toedit)
-<$set name=metadata value=`$:/state/0xsideEdit/$(toedit)$`>
+<$set name=metadata value=`$:/state/SideEditorV2/$(toedit)$`>
 <% if [<metadata>has[new-tiddler]] %>
     <$transclude $variable="parse-newtid-blob" toedit=<<toedit>>/>
 <% endif %>
@@ -38,7 +43,7 @@ tags: $:/tags/Macro
 <$button tooltip="Save and Close editor"
   style="margin-left:1px;">
     <$transclude $variable="checkif-newtid" toedit=<<toedit>>/>
-    <$action-deletetiddler $tiddler=`$:/state/0xsideEdit/$(toedit)$` />
+    <$action-deletetiddler $tiddler=`$:/state/SideEditorV2/$(toedit)$` />
     {{$:/core/images/done-button}}
 </$button>
 
@@ -53,26 +58,26 @@ tags: $:/tags/Macro
   {{$:/core/images/delete-button}}
     <$action-sendmessage $message="tm-close-tiddler" $param=<<toedit>>/>
     <$action-deletetiddler $tiddler=<<toedit>>/>
-    <$action-deletetiddler $tiddler=`$:/state/0xsideEdit/$(toedit)$` />
+    <$action-deletetiddler $tiddler=`$:/state/SideEditorV2/$(toedit)$` />
 </$button>
 
 <$button tooltip="Save tiddler and Create new">
 <$transclude $variable="checkif-newtid" toedit=<<toedit>>/>
-    <$action-deletetiddler $tiddler="$:/state/0xsideEdit/$(toedit)$" />
-    <$action-setfield $tiddler=`$:/state/0xsideEdit/$(unusedtitle)$` display="block" new-tiddler=true type={{$:/plugins/Speff/0xsideEdit/configs/content-type}}/>
+    <$action-deletetiddler $tiddler="$:/state/SideEditorV2/$(toedit)$" />
+    <$action-setfield $tiddler=`$:/state/SideEditorV2/$(unusedtitle)$` display="block" new-tiddler=true type={{$:/plugins/Speff/SideEditorV2/configs/content-type}}/>
     <$action-navigate $to=<<unusedtitle>> $scroll=yes/>
     {{$:/core/images/new-button}}
 </$button>
 
 <$button tooltip="Open in separate window">
-    <$action-deletefield $tiddler=`$:/state/0xsideEdit/$(toedit)$` display />
+    <$action-deletefield $tiddler=`$:/state/SideEditorV2/$(toedit)$` display />
     <$action-sendmessage
       $message="tm-open-window"
       $param=<<toedit>>
       inWindow=true
-      template="$:/plugins/Speff/0xsideEdit/main"
-      height={{{[{$:/info/browser/screen/height}multiply{$:/plugins/Speff/0xsideEdit/metrics!!top}divide[100]trunc[]subtract{$:/info/browser/screen/height}multiply[-1]subtract[100]]}}}
-      width={{{[{$:/info/browser/screen/width}multiply{$:/plugins/Speff/0xsideEdit/metrics!!left}divide[100]trunc[]subtract{$:/info/browser/screen/width}multiply[-1]subtract[50]]}}}
+      template="$:/plugins/Speff/SideEditorV2/main"
+      height={{{[{$:/info/browser/screen/height}multiply{$:/plugins/Speff/SideEditorV2/metrics!!top}divide[100]trunc[]subtract{$:/info/browser/screen/height}multiply[-1]subtract[100]]}}}
+      width={{{[{$:/info/browser/screen/width}multiply{$:/plugins/Speff/SideEditorV2/metrics!!left}divide[100]trunc[]subtract{$:/info/browser/screen/width}multiply[-1]subtract[50]]}}}
    />
 
     {{$:/core/images/open-window}}
@@ -84,7 +89,7 @@ tags: $:/tags/Macro
 <tr>
 <td style="min-width:1.5em; background:transparent;"></td>
 <td style="min-height:100px;">
-<$keyboard key="ctrl-enter" actions=`<$transclude $variable="checkif-newtid" toedit=<<toedit>>/><$action-deletetiddler $tiddler="$:/state/0xsideEdit/$(toedit)$"/>`>
+<$keyboard key="ctrl-enter" actions=`<$transclude $variable="checkif-newtid" toedit=<<toedit>>/><$action-deletetiddler $tiddler="$:/state/SideEditorV2/$(toedit)$"/>`>
     <$edit-text tiddler=<<toedit>> field="text" focus=true focusSelectFromStart="-1" focusSelectFromEnd="0"
         tag="textarea" class="se-editor tc-edit-texteditor" default=""/>
 </$keyboard>
@@ -105,15 +110,15 @@ tags: $:/tags/Macro
 \end
 
 \procedure sideeditor(tid)
-<% if [regexp[^\$:/state/0xsideEdit/.+]display[block]] %>
+<% if [regexp[^\$:/state/SideEditorV2/.+]display[block]] %>
 <div id="sideeditor">
 <<se-resizer "left">><<se-resizer "top">>
 
-<$list filter="[regexp[^\$:/state/0xsideEdit/.+]display[block]removeprefix[$:/state/0xsideEdit/]]">
+<$list filter="[regexp[^\$:/state/SideEditorV2/.+]display[block]removeprefix[$:/state/SideEditorV2/]]">
     <div id="se-main">
         <$transclude $variable="se-main" toedit=<<currentTiddler>>/>
     </div>
-    <style>{{$:/plugins/Speff/0xsideEdit/stylesheet}}</style>
+    <style>{{$:/plugins/Speff/SideEditorV2/stylesheet}}</style>
 </$list>
 </div>
 <% endif %>
@@ -131,8 +136,8 @@ tags: $:/tags/Macro
     </$button>
 </span>
 <span class="se-toolbar-btns se-right">
-    <$button tooltip="Switch to in-tiddly 0xsideEdit" actions=`
-      <$action-deletetiddler $filter="[regexp[^.:/state/0xsideEdit/]]"/><$action-setfield $tiddler="$:/state/0xsideEdit/$(currentTiddler)$" display=block />
+    <$button tooltip="Switch to in-tiddly SideEditorV2" actions=`
+      <$action-deletetiddler $filter="[regexp[^.:/state/SideEditorV2/]]"/><$action-setfield $tiddler="$:/state/SideEditorV2/$(currentTiddler)$" display=block />
       <$action-sendmessage $message="tm-close-window" $param=<<tv-window-id>>/>`
       style="transform: rotate(180deg);">
           {{$:/core/images/open-window}}
@@ -144,7 +149,7 @@ tags: $:/tags/Macro
 <td style="min-height:100px;">
 <$keyboard key="ctrl-enter" actions=`
   <$transclude $variable="checkif-newtid" toedit=<<currentTiddler>>/>
-  <$action-deletetiddler $tiddler="$:/state/0xsideEdit/$(currentTiddler)$"/>
+  <$action-deletetiddler $tiddler="$:/state/SideEditorV2/$(currentTiddler)$"/>
   <$action-sendmessage $message="tm-close-window" $param=<<tv-window-id>>/>
   `>
     <$edit-text field="text" tag="textarea" class="se-editor tc-edit-texteditor"

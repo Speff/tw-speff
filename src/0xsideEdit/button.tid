@@ -1,12 +1,12 @@
-title: $:/plugins/Speff/0xsideEdit/button
+title: $:/plugins/Speff/SideEditorV2/button
 tags: $:/tags/ViewToolbar
-caption: {{$:/core/images/right-arrow}} 0xsideEdit
+caption: {{$:/core/images/right-arrow}} SideEditorV2
 description: A live editor floating next to the story river...
 list-before: $:/core/ui/Buttons/close
 
 \whitespace trim
 <$button  class=<<tv-config-toolbar-class>>>
 {{$:/core/images/right-arrow}}
-<$action-deletetiddler $filter="[regexp[^.:/state/0xsideEdit/]]"/>
-<$action-setfield $tiddler=`$:/state/0xsideEdit/$(currentTiddler)$` display="block" />
+<$action-deletetiddler $filter="[regexp[^.:/state/SideEditorV2/]]"/>
+<$action-setfield $tiddler=`$:/state/SideEditorV2/$(currentTiddler)$` display="block" />
 </$button>

@@ -1,9 +1,9 @@
 {
-  "title": "$:/plugins/Speff/0xsideEdit",
-  "name": "0xsideEdit",
+  "title": "$:/plugins/Speff/SideEditorV2",
+  "name": "SideEditorV2",
   "author": "Speff",
   "description": "Lets you edit tiddlers in the sidebar or in a new window",
   "plugin-type": "plugin",
-  "version": "0.9.7",
+  "version": "0.9.8",
   "list": "readme"
 }

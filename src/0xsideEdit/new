@@ -2,3 +2,5 @@ focuses on side editor on open
 multiple different windows
 Ctrl+Enter to save+close
 prevent new tiddler from overwriting existing tiddler
+
+add toggle to allow sidebar to go over preview
