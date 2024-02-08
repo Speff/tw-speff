@@ -4,13 +4,11 @@
         "tiddlywiki/filesystem",
         "tiddlywiki/tiddlyweb",
         "tiddlywiki/pluginlibrary",
-        "tiddlywiki/highlight"
+        "tiddlywiki/highlight",
+        "tiddlywiki/markdown"
     ],
     "themes": [
         "tiddlywiki/vanilla"
-    ],
-    "languages": [
-        "zh-Hans"
     ],
     "build": {}
 }
