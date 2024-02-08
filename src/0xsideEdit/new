@@ -1,3 +1,6 @@
 focus select
 multiple different windows
 Ctrl+Enter to save+close
+
+add an alert message when user attempts to use an existing tid name
+DRY the new tiddler code. What the fuck is line 89

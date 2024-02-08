@@ -7,16 +7,26 @@ tags: $:/tags/Macro
 </div>
 \end
 
-\procedure new-tiddler(tid)
-<$transclude $variable="sideeditor" tid=tid/>
-\end
-
 \procedure se-main(toedit)
 <div class="se-toolbar">
 <span class="se-toolbar-btns se-left">
 <$button tooltip="Save and Close editor"
-  style="margin-left:1px;"
-  actions="""<$action-deletetiddler $tiddler=`$:/state/0xsideEdit/$(toedit)$` />""">
+  style="margin-left:1px;">
+<$set name=metadata value=`$:/state/0xsideEdit/$(toedit)$`>
+<% if [<metadata>has[new-tiddler]] %>
+<$set name=t_title filter="[<toedit>get[text]splitregexp[\n]]" select="0">
+<$set name=t_tags filter="[<toedit>get[text]splitregexp[\n]]" select="1">
+<$set name=t_text filter="[<toedit>get[text]removeprefix<t_title>trim[]removeprefix<t_tags>trim[]join[ ]]" select="0">
+<% if [<t_title>split[]nth[1]] %>
+<$action-sendmessage $message="tm-rename-tiddler" from=<<toedit>> to=<<t_title>> />
+<$action-setfield $tiddler=<<t_title>> tags=<<t_tags>> text=<<t_text>> />
+<% else %>
+<$action-setfield $tiddler=<<toedit>> tags=<<t_tags>> text=<<t_text>> />
+<% endif %>
+</$set></$set></$set>
+<% endif %>
+</$set>
+    <$action-deletetiddler $tiddler=`$:/state/0xsideEdit/$(toedit)$` />
     {{$:/core/images/done-button}}
 </$button>
 
@@ -26,7 +36,6 @@ tags: $:/tags/Macro
 </$button>
 </span>
 
-
 <span class="se-toolbar-btns se-right">
 <$button tooltip="Delete tiddler and Close editor">
   {{$:/core/images/delete-button}}
@@ -35,9 +44,24 @@ tags: $:/tags/Macro
     <$action-deletetiddler $tiddler=`$:/state/0xsideEdit/$(toedit)$` />
 </$button>
 
-<$button tooltip="Save tiddler and Create new"
-  actions=`<$action-setfield $tiddler="$:/state/0xsideEdit/$(unusedtitle)$"/><$action-deletetiddler $tiddler="$:/state/0xsideEdit/$(toedit)$" />`>
-    <$action-setfield $tiddler=`$:/state/0xsideEdit/$(unusedtitle)$` display="block" />
+<$button tooltip="Save tiddler and Create new">
+<$set name=metadata value=`$:/state/0xsideEdit/$(toedit)$`>
+<% if [<metadata>has[new-tiddler]] %>
+<$set name=t_title filter="[<toedit>get[text]splitregexp[\n]]" select="0">
+<$set name=t_tags filter="[<toedit>get[text]splitregexp[\n]]" select="1">
+<$set name=t_text filter="[<toedit>get[text]removeprefix<t_title>trim[]removeprefix<t_tags>trim[]join[ ]]" select="0">
+<% if [<t_title>split[]nth[1]] %>
+<$action-sendmessage $message="tm-rename-tiddler" from=<<toedit>> to=<<t_title>> />
+<$action-setfield $tiddler=<<t_title>> tags=<<t_tags>> text=<<t_text>> />
+<% else %>
+<$action-setfield $tiddler=<<toedit>> tags=<<t_tags>> text=<<t_text>> />
+<% endif %>
+</$set></$set></$set>
+<% endif %>
+</$set>
+
+    <$action-deletetiddler $tiddler="$:/state/0xsideEdit/$(toedit)$" />
+    <$action-setfield $tiddler=`$:/state/0xsideEdit/$(unusedtitle)$` display="block" new-tiddler=true />
     <$action-navigate $to=<<unusedtitle>> $scroll=yes/>
     {{$:/core/images/new-button}}
 </$button>
@@ -62,7 +86,8 @@ tags: $:/tags/Macro
 <tr>
 <td style="min-width:1.5em; background:transparent;"></td>
 <td style="min-height:100px;">
-<$keyboard key="ctrl-enter" actions=`<$action-deletetiddler $tiddler="$:/state/0xsideEdit/$(toedit)$"/>`>
+<$keyboard key="ctrl-enter" actions=`<$set name=metadata value="$:/state/0xsideEdit/$(toedit)$>" <% if [<metadata>has[new-tiddler]] %> <$set name=t_title filter="[<toedit>get[text]splitregexp[\n]]" select="0"> <$set name=t_tags filter="[<toedit>get[text]splitregexp[\n]]" select="1"> <$set name=t_text filter="[<toedit>get[text]removeprefix<t_title>trim[]removeprefix<t_tags>trim[]join[ ]]" select="0"> <% if [<t_title>split[]nth[1]] %> <$action-sendmessage $message="tm-rename-tiddler" from=<<toedit>> to=<<t_title>> /> <$action-setfield $tiddler=<<t_title>> tags=<<t_tags>> text=<<t_text>> /> <% else %> <$action-setfield $tiddler=<<toedit>> tags=<<t_tags>> text=<<t_text>> /> <% endif %> </$set></$set></$set> <% endif %> </$set>
+<$action-deletetiddler $tiddler="$:/state/0xsideEdit/$(toedit)$"/>`>
     <$edit-text tiddler=<<toedit>> field="text" focus=true focusSelectFromStart="-1" focusSelectFromEnd="0"
         tag="textarea" class="se-editor tc-edit-texteditor" default=""/>
 </$keyboard>

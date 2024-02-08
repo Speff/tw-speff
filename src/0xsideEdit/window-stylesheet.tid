@@ -81,6 +81,5 @@ tags: $:/tags/Stylesheet
   z-index:-1;
   overflow:hidden;
   white-space:nowrap;
-  display:none; /* default */
 }
 </pre>

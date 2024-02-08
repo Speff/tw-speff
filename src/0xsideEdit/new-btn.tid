@@ -20,7 +20,7 @@ description: Create "New tiddler" in 0xsideEdit
 <$action-deletetiddler $filter="[regexp[^.:/state/0xsideEdit/]]"/>
 <$action-setfield $tiddler=`$:/state/0xsideEdit/$(unusedtitle)$`
    display="block"
-   text=<<unusedtitle>>
+   new-tiddler=true
 />
 <$action-navigate $to=<<unusedtitle>>/>
 </$button>
