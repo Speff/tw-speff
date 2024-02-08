@@ -12,8 +12,12 @@ tags: $:/tags/Macro
 <$set name=t_tags filter="[<toedit>get[text]splitregexp[\n]]" select="1">
 <$set name=t_text filter="[<toedit>get[text]removeprefix<t_title>trim[]removeprefix<t_tags>trim[]join[ ]]" select="0">
 <% if [<t_title>split[]nth[1]] %>
-<$action-sendmessage $message="tm-rename-tiddler" from=<<toedit>> to=<<t_title>> />
-<$action-setfield $tiddler=<<t_title>> tags=<<t_tags>> text=<<t_text>> type={{$:/plugins/Speff/0xsideEdit/configs/content-type}}/>
+    <% if [[$:/plugins/Speff/0xsideEdit/configs/clashoverwrite]get[text]] %>
+    <$action-sendmessage $message="tm-rename-tiddler" from=<<toedit>> to=<<t_title>> />
+    <$action-setfield $tiddler=<<t_title>> tags=<<t_tags>> text=<<t_text>> type={{$:/plugins/Speff/0xsideEdit/configs/content-type}}/>
+    <% else %>
+    <$action-setfield $tiddler=<<toedit>> tags=<<t_tags>> text=<<t_text>> type={{$:/plugins/Speff/0xsideEdit/configs/content-type}}/>
+    <% endif %>
 <% else %>
 <$action-setfield $tiddler=<<toedit>> tags=<<t_tags>> text=<<t_text>> type={{$:/plugins/Speff/0xsideEdit/configs/content-type}}/>
 <% endif %>

@@ -1,10 +1,13 @@
 title: $:/plugins/Speff/0xsideEdit/config
 tags: $:/tags/ControlPanel/SettingsTab
-caption: 0xsideEdit Settings
+caption: 0xsideEdit
 
 ;Set default content type for new 0xsideEdit tiddlers
-<$select tiddler="$:/plugins/Speff/0xsideEdit/configs/content-type" default="vnd.tiddlywiki">
-<$list filter="[all[shadows]regexp[^.:/language/Docs/Types/text]get[name]]">
-<option value=<<currentTiddler>>><$view field="title"/></option>
-</$list>
-</$select>
+:Content-type: <$select tiddler="$:/plugins/Speff/0xsideEdit/configs/content-type" default="vnd.tiddlywiki">
+:<$list filter="[all[shadows]regexp[^.:/language/Docs/Types/text]get[name]]">
+:<option value=<<currentTiddler>>><$view field="title"/></option>
+:</$list>
+:</$select>
+
+;Overwrite existing tiddlers if new tiddler's title clashes
+:<$checkbox tiddler="$:/plugins/Speff/0xsideEdit/configs/clashoverwrite" field="text" checked="yes" unchecked=""> Overwrite </$checkbox>
