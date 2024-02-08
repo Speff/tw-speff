@@ -88,7 +88,7 @@ tags: $:/tags/Macro
 <% if [<toedit>is[missing]] %>
    <td style="min-height:100px; background:white;">
       <div class="se-editor-placeholder">
-         ''title row'': type title - OR - leave row empty  to accept "<<toedit>>"<br>
+         ''title row'': type title - OR - leave row empty to accept "<<toedit>>"<br>
          ''tags row'': type tags and [&zwj;[bracketed tags]&zwj;] - OR - leave row empty<br>
          ''text'': ...
       </div>
@@ -127,24 +127,29 @@ tags: $:/tags/Macro
     </$button>
 </span>
 <span class="se-toolbar-btns se-right">
-    <a href="javascript:open(location, '_self').close();">
-        <$button tooltip="Switch to in-tiddly 0xsideEdit"
-            actions=`<$action-deletetiddler $filter="[regexp[^.:/state/0xsideEdit/]]"/><$action-setfield $tiddler="$:/state/0xsideEdit/$(currentTiddler)$" display=block />`
-            style="transform: rotate(180deg);">
-              {{$:/core/images/open-window}}
-        </$button>
-    </a>
+    <$button tooltip="Switch to in-tiddly 0xsideEdit" actions=`
+      <$action-deletetiddler $filter="[regexp[^.:/state/0xsideEdit/]]"/><$action-setfield $tiddler="$:/state/0xsideEdit/$(currentTiddler)$" display=block />
+      <$action-sendmessage $message="tm-close-window" $param=<<tv-window-id>>/>`
+      style="transform: rotate(180deg);">
+          {{$:/core/images/open-window}}
+    </$button>
 </span>
 </div>
 <table class="se-editor-table">
 <tr>
 <td style="min-height:100px;">
+<$keyboard key="ctrl-enter" actions=`
+  <$transclude $variable="checkif-newtid" toedit=<<currentTiddler>>/>
+  <$action-deletetiddler $tiddler="$:/state/0xsideEdit/$(currentTiddler)$"/>
+  <$action-sendmessage $message="tm-close-window" $param=<<tv-window-id>>/>
+  `>
     <$edit-text field="text" tag="textarea" class="se-editor tc-edit-texteditor"
       tiddler=<<currentTiddler>> minHeight="100%" default="" />
+</$keyboard>
 </td>
 <% if [<currentTiddler>is[missing]] %>
    <td class="se-editor-placeholder">
-         ''title row'': type title - OR - leave row empty  to accept "<<toedit>>"<br>
+         ''title row'': type title - OR - leave row empty to accept "<<toedit>>"<br>
          ''tags row'': type tags and [&zwj;[bracketed tags]&zwj;] - OR - leave row empty<br>
          ''text'': ...
    </td>
