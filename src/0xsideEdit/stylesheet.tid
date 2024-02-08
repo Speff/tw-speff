@@ -12,7 +12,8 @@ title: $:/plugins/Speff/0xsideEdit/stylesheet
 .tc-sidebar-scrollable:hover {overflow-y:auto !important;}
 
 /* Prioritize access to sidebar or river when they're hovered */
-.tc-sidebar-scrollable:hover,
+/* Uncomment line below to re-enable sidebar hovering */
+/*.tc-sidebar-scrollable:hover,*/
  .tc-story-river > .tc-tiddler-frame:hover {
   z-index:2002;
 }
@@ -22,7 +23,8 @@ title: $:/plugins/Speff/0xsideEdit/stylesheet
 }
 @media (min-width:{{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
   .tc-sidebar-scrollable:hover {
-    max-width:{{$:/themes/tiddlywiki/vanilla/metrics/sidebarwidth}};
+    /* Uncomment line below to re-enable sidebar hovering */
+    /*max-width:{{$:/themes/tiddlywiki/vanilla/metrics/sidebarwidth}};*/
     border-right:1em solid transparent; /* hover margin*/
     top:42px; /* access to top bar */
     <$list filter="[{$:/themes/tiddlywiki/vanilla/options/sidebarlayout}match[fluid-fixed]]">
