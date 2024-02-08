@@ -124,6 +124,13 @@ tags: $:/tags/Macro
     <$edit-text field="text" tag="textarea" class="se-editor tc-edit-texteditor"
       tiddler=<<currentTiddler>> minHeight="100%" default="" />
 </td>
+<% if [<currentTiddler>is[missing]] %>
+   <td class="se-editor-placeholder">
+         ''title row'': type title - OR - leave row empty  to accept "<<toedit>>"<br>
+         ''tags row'': type tags and [&zwj;[bracketed tags]&zwj;] - OR - leave row empty<br>
+         ''text'': ...
+   </td>
+   <% endif %>
 </tr>
 </table>
 </div>

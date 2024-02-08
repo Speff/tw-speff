@@ -83,9 +83,4 @@ tags: $:/tags/Stylesheet
   white-space:nowrap;
   display:none; /* default */
 }
-<$list filter="""[{$:/state/SideEditor}!has[title]]""">
-<$list filter="""[{$:/state/SideEditor!!newtid}match[yes]] [<currentTiddler>is[missing]] +[first[]then{$:/state/SideEditor}]""">
-.se-window .se-editor-placeholder { display:table-cell; }
-</$list>
-</$list>
 </pre>
