@@ -17,12 +17,10 @@ description: Create "New tiddler" in 0xsideEdit
       <$text text={{$:/language/Buttons/NewTiddler/Caption}}/>
    </span>
 </$list>
-<$action-setfield $tiddler="$:/state/0xsideEdit"
+<$action-deletetiddler $filter="[regexp[^.:/state/0xsideEdit/]]"/>
+<$action-setfield $tiddler=`$:/state/0xsideEdit/$(unusedtitle)$`
    display="block"
    text=<<unusedtitle>>
-/>
-<$action-deletetiddler
-   $tiddler="$:/temp/0xsideEdit/macrotext"
 />
 <$action-navigate $to=<<unusedtitle>>/>
 </$button>
