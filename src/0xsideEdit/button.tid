@@ -2,6 +2,7 @@ title: $:/plugins/Speff/0xsideEdit/button
 tags: $:/tags/ViewToolbar
 caption: {{$:/core/images/right-arrow}} 0xsideEdit
 description: A live editor floating next to the story river...
+list-before: $:/core/ui/Buttons/close
 
 \whitespace trim
 <$button  class=<<tv-config-toolbar-class>>>
