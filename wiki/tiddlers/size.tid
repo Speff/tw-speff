@@ -1,6 +1,13 @@
 created: 20240207195117445
-modified: 20240207200938235
+modified: 20240208061039512
 title: size
 type: text/vnd.tiddlywiki
 
-do re medsdfsdfsdfsdfsdfsdsdkf;sldkf;sldkfsdfdsfsdfsdfsdfsdfsdfsdfdsf
+<table><tr><th>title</th><th>size</th></tr>
+<$list filter="[all[tiddlers]] :sort:integer:reverse[<currentTiddler>get[text]length[]]">
+   <tr>
+      <td><$link/></td>
+      <td style="text-align:right;"><$text text={{{ [<currentTiddler>get[text]length[]divide[1024]fixed[2]] }}}/></td>
+   </tr>
+</$list>
+</table>
