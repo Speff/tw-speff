@@ -67,6 +67,17 @@ tags: $:/tags/Macro
         tag="textarea" class="se-editor tc-edit-texteditor" default=""/>
 </$keyboard>
 </td>
+<% if [<toedit>is[missing]] %>
+   <td style="min-height:100px; background:white;">
+      <div class="se-editor-placeholder">
+         ''title row'': type title - OR - leave row empty  to accept "<<toedit>>"<br>
+         ''tags row'': type tags and [&zwj;[bracketed tags]&zwj;] - OR - leave row empty<br>
+         ''text'': ...
+      </div>
+   </td>
+   <style>.se-editor-table td:nth-of-type(2) {position:absolute;}
+.se-editor {background:transparent;}</style>
+<% endif %>
 </tr>
 </table>
 \end
