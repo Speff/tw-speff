@@ -4,6 +4,6 @@
   "author": "Speff",
   "description": "Lets you edit tiddlers in the sidebar or in a new window",
   "plugin-type": "plugin",
-  "version": "0.9.0",
+  "version": "0.9.7",
   "list": "readme"
 }
