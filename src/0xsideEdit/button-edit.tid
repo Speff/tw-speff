@@ -5,7 +5,7 @@ description: A live editor floating next to the story river...
 list-before: $:/core/ui/Buttons/close
 
 \whitespace trim
-<% if [<currentTiddler>!tag[$:/tags/Macro]] %>
+<% if [<currentTiddler>!tag[$:/tags/Macro]!tag[$:/tags/Global]] %>
 <$button class=<<tv-config-toolbar-class>> tooltip="Open in side editor">
 {{$:/core/images/right-arrow}}
 <$action-deletetiddler $filter="[regexp[^.:/state/SideEditorV2/]]"/>
