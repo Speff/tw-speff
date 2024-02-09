@@ -33,6 +33,10 @@ You see the changes //live// in the tiddler and you can scroll to, and reference
 * Added new ViewToolbar and PageToolbar buttons to directly open tiddler editor in a new window
 ** Enable them in the [[$:/ControlPanel]] (Appearance->Toolbars->Page|View Toolbar)
 
+!!! Removed functionality
+* Cannot edit tiddlers tagged as `$:/tags/Macro` or `$:/tags/Global`
+* Sidebar does not appear in front of SideEditor on hover
+
 //Speff//
 
 <div class="about-demo">''Demo''  ⟶<br>//mess it up!//</div>
