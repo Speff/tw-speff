@@ -1,4 +1,4 @@
-title: $:/plugins/Speff/SideEditorV2/button
+title: $:/plugins/Speff/SideEditorV2/button-edit
 tags: $:/tags/ViewToolbar
 caption: {{$:/core/images/right-arrow}} SideEditorV2
 description: A live editor floating next to the story river...

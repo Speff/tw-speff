@@ -7,6 +7,17 @@ tags: $:/tags/Macro
 </div>
 \end
 
+\procedure open-window(toedit)
+    <$action-sendmessage
+      $message="tm-open-window"
+      $param=<<toedit>>
+      inWindow=true
+      template="$:/plugins/Speff/SideEditorV2/main"
+      height={{{[{$:/info/browser/screen/height}multiply{$:/plugins/Speff/SideEditorV2/metrics!!top}divide[100]trunc[]subtract{$:/info/browser/screen/height}multiply[-1]subtract[100]]}}}
+      width={{{[{$:/info/browser/screen/width}multiply{$:/plugins/Speff/SideEditorV2/metrics!!left}divide[100]trunc[]subtract{$:/info/browser/screen/width}multiply[-1]subtract[50]]}}}
+   />
+\end
+
 \procedure parse-newtid-blob(toedit)
 <$set name=t_title filter="[<toedit>get[text]splitregexp[\n]]" select="0">
 <$set name=t_tags filter="[<toedit>get[text]splitregexp[\n]]" select="1">
@@ -71,14 +82,7 @@ tags: $:/tags/Macro
 
 <$button tooltip="Open in separate window">
     <$action-deletefield $tiddler=`$:/state/SideEditorV2/$(toedit)$` display />
-    <$action-sendmessage
-      $message="tm-open-window"
-      $param=<<toedit>>
-      inWindow=true
-      template="$:/plugins/Speff/SideEditorV2/main"
-      height={{{[{$:/info/browser/screen/height}multiply{$:/plugins/Speff/SideEditorV2/metrics!!top}divide[100]trunc[]subtract{$:/info/browser/screen/height}multiply[-1]subtract[100]]}}}
-      width={{{[{$:/info/browser/screen/width}multiply{$:/plugins/Speff/SideEditorV2/metrics!!left}divide[100]trunc[]subtract{$:/info/browser/screen/width}multiply[-1]subtract[50]]}}}
-   />
+    <$transclude $variable="open-window" toedit=<<toedit>>/>
 
     {{$:/core/images/open-window}}
 </$button>

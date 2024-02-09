@@ -2,5 +2,8 @@ focuses on side editor on open
 multiple different windows
 Ctrl+Enter to save+close
 prevent new tiddler from overwriting existing tiddler
+added new buttons to edit tiddlers in a new windo
 
 add toggle to allow sidebar to go over preview
+shadow tiddlers don't get recognized as existing
+fix new window button

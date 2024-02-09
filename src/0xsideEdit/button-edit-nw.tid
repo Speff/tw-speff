@@ -1,0 +1,13 @@
+title: $:/plugins/Speff/SideEditorV2/button-edit-nw
+tags: $:/tags/ViewToolbar
+caption: {{$:/core/images/right-arrow}} SideEditorV2 New Window
+description: A live editor floating above the story river...
+list-after: $:/plugins/Speff/SideEditorV2/button-nw
+
+\whitespace trim
+<$button class=<<tv-config-toolbar-class>> tooltip="Open in separate window">
+    <$action-deletefield $tiddler=`$:/state/SideEditorV2/$(currentTiddler)$` display />
+    <$transclude $variable="open-window" toedit=<<currentTiddler>>/>
+    {{$:/plugins/Speff/SideEditorV2/button-edit-nw-icon}}
+</$button>
+
