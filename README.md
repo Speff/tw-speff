@@ -27,7 +27,10 @@ Mat von TWaddle <:-)
 ^my main motivation for the refactor^
 * Ctrl+Enter while editing a tiddler saves/closes the
 * Cursor focuses on SideEditor window when
-* Added logic to prevent a tiddler from being
+* Added logic to prevent a tiddler from being overwritten
+    * Default behavior is to ignore the user-provided title on name clash
+    * This can be changed in the new Settings menu (under $:/ControlPanel -> Settings -> SideEditorV2)
+* Added the ability to change the default tiddler type when making a new one through the Add button (also in the Settings menu)
 * Added new ViewToolbar and PageToolbar buttons to directly open tiddler editor in a new
     * Enable them in the $:/ControlPanel (Appearance->Toolbars->Page|View Toolbar)
 
