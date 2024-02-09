@@ -87,7 +87,7 @@ x min-width:calc(100% + 1.5em);
  .se-editor-placeholder {
   min-height:100px;
   padding:5px; padding-bottom:1em;
-  max-height:calc(100vh - {{$:/plugins/Speff/SideEditorV2/metrics!!top}}vh - 2.3em);
+  /*max-height:calc(100vh - {{$:/plugins/Speff/SideEditorV2/metrics!!top}}vh - 2.3em);*/
   width:calc(100vw - {{$:/plugins/Speff/SideEditorV2/metrics!!left}}vw - 1.2em);
   vertical-align:top;
 }
