@@ -1,8 +1,8 @@
 title: $:/plugins/Speff/SideEditorV2/button-new-nw
 tags: $:/tags/PageControls
-caption: {{$:/plugins/Speff/SideEditorV2/button-new-nw-icon}} new tiddler
-description: Create "New tiddler" in SideEditorV2
-list-after: $:/core/ui/Buttons/new-tiddler
+caption: {{$:/plugins/Speff/SideEditorV2/button-new-nw-icon}} SideEditorV2 new tiddler popup
+description: Create "New tiddler" in a SideEditorV2 new window
+list-after: $:/plugins/Speff/SideEditorV2/button-new
 
 \whitespace trim
 <$button

@@ -1,6 +1,6 @@
 title: $:/plugins/Speff/SideEditorV2/button-new
 tags: $:/tags/PageControls
-caption: {{$:/plugins/Speff/SideEditorV2/button-new-icon}} new tiddler
+caption: {{$:/plugins/Speff/SideEditorV2/button-new-icon}} SideEditorV2 new tiddler
 description: Create "New tiddler" in SideEditorV2
 list-after: $:/core/ui/Buttons/new-tiddler
 
