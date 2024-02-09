@@ -32,7 +32,7 @@ Mat von TWaddle <:-)
     * This can be changed in the new Settings menu (under $:/ControlPanel -> Settings -> SideEditorV2)
 * Added the ability to change the default tiddler type when making a new one through the Add button (also in the Settings menu)
 * Added new ViewToolbar and PageToolbar buttons to directly open tiddler editor in a new
-    * Enable them in the $:/ControlPanel (Appearance->Toolbars->Page|View Toolbar)
+    * Enable them in the $:/ControlPanel (Appearance -> Toolbars -> Page|View Toolbar)
 
 ### Removed functionality
 
