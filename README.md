@@ -36,7 +36,7 @@ Mat von TWaddle <:-)
 
 ### Removed functionality
 
-* Cannot edit tiddlers tagged as $:/tags/Macro or $:/tags/Global
+* Cannot edit tiddlers tagged as \$:/tags/Macro or \$:/tags/Global
 * Sidebar does not appear in front of SideEditor on hover
 
 Speff
