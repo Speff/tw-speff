@@ -1,6 +1,27 @@
 title: $:/plugins/Speff/SideEditorV2/readme
 type: text/vnd.tiddlywiki
 
-! SideEditorV2
+''SideEditorV2'' floats a tiddlers editor by the story river side, giving you a //live// view of the effects from your editing.
 
-Lets you edit tiddlers in the sidebar or in a new window
+''Usage''
+
+*''Activate'' SideEditorV2 via the tiddler tools <span class="about-icon">{{$:/core/images/right-arrow}}</span><span class="about-icon">{{$:/plugins/Speff/SideEditorV2/button-edit-nw-icon}}</span> or page tools <span class="about-icon">{{$:/plugins/Speff/SideEditorV2/button-new-icon}}</span><span class="about-icon">{{$:/plugins/Speff/SideEditorV2/button-new-nw-icon}}</span>
+*''Re-size'' it via the "handle bars" at upper-right and lower-left corner
+*''Switch focus'' between the story river and SideEditorV2 by ''hovering''
+
+''Separate window use'' &nbsp; <span class="about-icon">{{$:/core/images/open-window}}</span>
+
+*''Modded buttons'', <span class="about-icon">{{$:/plugins/Speff/SideEditorV2/button-edit-nw-icon}}</span><span class="about-icon">{{$:/plugins/Speff/SideEditorV2/button-new-nw-icon}}</span> allow you to edit an existing tiddler or create a new tiddler in the SideEditorV2 popup directly
+*''Stick window'', using separate software ([[e.g|https://www.google.com/search?q=deskpins&oq=deskpins&aqs=chrome.0.69i59j0l7.5485j0j7&sourceid=chrome&ie=UTF-8]]), to simplify copy-pasting
+*''Go distraction free'' by maximizing the window
+
+;Macros
+:Macros are not suppported with this plugin. The buttons to edit tiddlers tagged as `$:/tags/Macro` or `$:/tags/Global` are disabled
+
+''Original Plugin home'': http://sideeditor.tiddlyspot.com/
+<br>''V2 Plugin Source'': https://github.com/Speff/tw-speff/
+
+<br>//Mat <:-) von TWaddle//
+<br>+ //Speff//
+
+<style>.about-icon svg {display:inline; max-width:1em; max-height:1em; fill:gray; margin-bottom:-2px;}</style>
