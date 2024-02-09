@@ -98,7 +98,7 @@ tags: $:/tags/Macro
         tag="textarea" class="se-editor tc-edit-texteditor" default=""/>
 </$keyboard>
 </td>
-<% if [<toedit>is[missing]] %>
+<% if [<toedit>is[missing]!is[shadow]] %>
    <td style="min-height:100px; background:white;">
       <div class="se-editor-placeholder">
          ''title row'': type title - OR - leave row empty to accept "<<toedit>>"<br>
@@ -160,7 +160,7 @@ tags: $:/tags/Macro
       tiddler=<<currentTiddler>> minHeight="100%" default="" />
 </$keyboard>
 </td>
-<% if [<currentTiddler>is[missing]] %>
+<% if [<currentTiddler>is[missing]!is[shadow]] %>
    <td class="se-editor-placeholder">
          ''title row'': type title - OR - leave row empty to accept "<<toedit>>"<br>
          ''tags row'': type tags and [&zwj;[bracketed tags]&zwj;] - OR - leave row empty<br>
