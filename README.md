@@ -1,7 +1,7 @@
 [Try it here](https://speff.github.io/tw-speff/)
 
 # EdgeScribe
-### **Original description/plugin from twMat [here](https://sideeditor.tiddlyspot.com/)**
+### **Original description/plugin from twMat [here](https://sideeditor.tiddlyhost.com/)**
 EdgeScribe floats a tiddlers editor by the story river side.
 
 You see the changes live in the tiddler and you can scroll to, and reference, stuff from other tiddlers while you edit.

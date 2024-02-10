@@ -18,7 +18,7 @@ type: text/vnd.tiddlywiki
 ;Macros
 :Macros are not suppported with this plugin. The buttons to edit tiddlers tagged as `$:/tags/Macro` or `$:/tags/Global` are disabled
 
-''Original Plugin home'': http://sideeditor.tiddlyspot.com/
+''Original Plugin home'': https://sideeditor.tiddlyhost.com/
 <br>''V2 Plugin Source'': https://github.com/Speff/tw-speff/
 
 <br>//Mat <:-) von TWaddle//
