@@ -25,8 +25,8 @@ Mat von TWaddle <:-)
 
 * Now able to open+edit multiple tiddlers in their own popped out windows
 ^my main motivation for the refactor^
-* Ctrl+Enter while editing a tiddler saves/closes the
-* Cursor focuses on EdgeScribe window when
+* Ctrl+Enter while editing a tiddler saves/closes the editor
+* Cursor focuses on EdgeScribe window when the editor is created
 * Added logic to prevent a tiddler from being overwritten
     * Default behavior is to ignore the user-provided title on name clash
     * This can be changed in the new Settings menu (under $:/ControlPanel -> Settings -> EdgeScribe)
