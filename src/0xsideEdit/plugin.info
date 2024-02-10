@@ -1,6 +1,6 @@
 {
-  "title": "$:/plugins/Speff/SideEditorV2",
-  "name": "SideEditorV2",
+  "title": "$:/plugins/Speff/EdgeScribe",
+  "name": "EdgeScribe",
   "author": "Speff",
   "description": "Lets you edit tiddlers in the sidebar or in a new window",
   "plugin-type": "plugin",

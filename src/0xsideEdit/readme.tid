@@ -1,17 +1,17 @@
-title: $:/plugins/Speff/SideEditorV2/readme
+title: $:/plugins/Speff/EdgeScribe/readme
 type: text/vnd.tiddlywiki
 
-''SideEditorV2'' floats a tiddlers editor by the story river side, giving you a //live// view of the effects from your editing.
+''EdgeScribe'' floats a tiddlers editor by the story river side, giving you a //live// view of the effects from your editing.
 
 ''Usage''
 
-*''Activate'' SideEditorV2 via the tiddler tools <span class="about-icon">{{$:/core/images/right-arrow}}</span><span class="about-icon">{{$:/plugins/Speff/SideEditorV2/button-edit-nw-icon}}</span> or page tools <span class="about-icon">{{$:/plugins/Speff/SideEditorV2/button-new-icon}}</span><span class="about-icon">{{$:/plugins/Speff/SideEditorV2/button-new-nw-icon}}</span>
+*''Activate'' EdgeScribe via the tiddler tools <span class="about-icon">{{$:/core/images/right-arrow}}</span><span class="about-icon">{{$:/plugins/Speff/EdgeScribe/button-edit-nw-icon}}</span> or page tools <span class="about-icon">{{$:/plugins/Speff/EdgeScribe/button-new-icon}}</span><span class="about-icon">{{$:/plugins/Speff/EdgeScribe/button-new-nw-icon}}</span>
 *''Re-size'' it via the "handle bars" at upper-right and lower-left corner
-*''Switch focus'' between the story river and SideEditorV2 by ''hovering''
+*''Switch focus'' between the story river and EdgeScribe by ''hovering''
 
 ''Separate window use'' &nbsp; <span class="about-icon">{{$:/core/images/open-window}}</span>
 
-*''Modded buttons'', <span class="about-icon">{{$:/plugins/Speff/SideEditorV2/button-edit-nw-icon}}</span><span class="about-icon">{{$:/plugins/Speff/SideEditorV2/button-new-nw-icon}}</span> allow you to edit an existing tiddler or create a new tiddler in the SideEditorV2 popup directly
+*''Modded buttons'', <span class="about-icon">{{$:/plugins/Speff/EdgeScribe/button-edit-nw-icon}}</span><span class="about-icon">{{$:/plugins/Speff/EdgeScribe/button-new-nw-icon}}</span> allow you to edit an existing tiddler or create a new tiddler in the EdgeScribe popup directly
 *''Stick window'', using separate software ([[e.g|https://www.google.com/search?q=deskpins&oq=deskpins&aqs=chrome.0.69i59j0l7.5485j0j7&sourceid=chrome&ie=UTF-8]]), to simplify copy-pasting
 *''Go distraction free'' by maximizing the window
 

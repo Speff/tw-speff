@@ -1,7 +1,7 @@
-title: $:/plugins/Speff/SideEditorV2/stylesheet
+title: $:/plugins/Speff/EdgeScribe/stylesheet
 
 /*
- * In-macro styles, i.e called from within the SideEditor macro, when that is active.
+ * In-macro styles, i.e called from within the EdgeScribe macro, when that is active.
  * Do NOT tag it $:/tags/Stylesheet as that would make it permanently active.
  * Do NOT enclose in pre tags.
  */

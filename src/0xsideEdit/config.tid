@@ -1,7 +1,7 @@
-title: $:/plugins/Speff/SideEditorV2/config
+title: $:/plugins/Speff/EdgeScribe/config
 tags: $:/tags/ControlPanel/SettingsTab
-caption: SideEditorV2
+caption: EdgeScribe
 
 |     Settings     |h
-|Set default content type for new SideEditorV2 tiddlers| <$select tiddler="$:/plugins/Speff/SideEditorV2/configs/content-type" default="vnd.tiddlywiki"> <$list filter="[all[shadows]regexp[^.:/language/Docs/Types/text]get[name]]"> <option value=<<currentTiddler>>><$view field="title"/></option> </$list> </$select> |
-|''Overwrite'' existing tiddlers if new tiddler's title clashes<br>//Default behavior: ignore user-provided title//| <$checkbox tiddler="$:/plugins/Speff/SideEditorV2/configs/clashoverwrite" field="text" checked="yes" unchecked=""> </$checkbox> |
+|Set default content type for new EdgeScribe tiddlers| <$select tiddler="$:/plugins/Speff/EdgeScribe/configs/content-type" default="vnd.tiddlywiki"> <$list filter="[all[shadows]regexp[^.:/language/Docs/Types/text]get[name]]"> <option value=<<currentTiddler>>><$view field="title"/></option> </$list> </$select> |
+|''Overwrite'' existing tiddlers if new tiddler's title clashes<br>//Default behavior: ignore user-provided title//| <$checkbox tiddler="$:/plugins/Speff/EdgeScribe/configs/clashoverwrite" field="text" checked="yes" unchecked=""> </$checkbox> |

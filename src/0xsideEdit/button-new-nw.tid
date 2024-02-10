@@ -1,8 +1,8 @@
-title: $:/plugins/Speff/SideEditorV2/button-new-nw
+title: $:/plugins/Speff/EdgeScribe/button-new-nw
 tags: $:/tags/PageControls
-caption: {{$:/plugins/Speff/SideEditorV2/button-new-nw-icon}} SideEditorV2 new tiddler popup
-description: Create "New tiddler" in a SideEditorV2 new window
-list-after: $:/plugins/Speff/SideEditorV2/button-new
+caption: {{$:/plugins/Speff/EdgeScribe/button-new-nw-icon}} EdgeScribe new tiddler popup
+description: Create "New tiddler" in a EdgeScribe new window
+list-after: $:/plugins/Speff/EdgeScribe/button-new
 
 \whitespace trim
 <$button
@@ -11,14 +11,14 @@ list-after: $:/plugins/Speff/SideEditorV2/button-new
    class=<<tv-config-toolbar-class>>
 >
 <$list filter="[<tv-config-toolbar-icons>match[yes]]">
-   {{$:/plugins/Speff/SideEditorV2/button-new-nw-icon}}
+   {{$:/plugins/Speff/EdgeScribe/button-new-nw-icon}}
 </$list>
 <$list filter="[<tv-config-toolbar-text>match[yes]]">
    <span class="tc-btn-text">
       <$text text={{$:/language/Buttons/NewTiddler/Caption}}/>
    </span>
 </$list>
-    <$action-setfield $tiddler=`$:/state/SideEditorV2/$(unusedtitle)$` new-tiddler=true />
+    <$action-setfield $tiddler=`$:/state/EdgeScribe/$(unusedtitle)$` new-tiddler=true />
     <$transclude $variable="open-window" toedit=<<unusedtitle>>/>
     <$action-navigate $to=<<unusedtitle>>/>
 </$button>

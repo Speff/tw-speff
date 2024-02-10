@@ -1,4 +1,4 @@
-title: $:/plugins/Speff/SideEditorV2/revealer
+title: $:/plugins/Speff/EdgeScribe/revealer
 tags: $:/tags/PageTemplate
 
-<<sideeditor {{$:/state/SideEditorV2}}>>
+<<sideeditor {{$:/state/EdgeScribe}}>>

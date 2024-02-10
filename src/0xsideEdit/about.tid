@@ -1,16 +1,16 @@
-title: $:/plugins/Speff/SideEditorV2/about
+title: $:/plugins/Speff/EdgeScribe/about
 
-!! Original Description^^with some edits^^
+!! [[Original|https://sideeditor.tiddlyhost.com/]] Description^^with some edits^^
 
-[[SideEditorV2|$:/plugins/Speff/SideEditorV2]] floats a tiddlers editor by the story river side.
+[[EdgeScribe|$:/plugins/Speff/EdgeScribe]] floats a tiddlers editor by the story river side.
 
 You see the changes //live// in the tiddler and you can scroll to, and reference, stuff from other tiddlers while you edit.
 
 ''Usage''
 
-*''Activate'' SideEditor by clicking the tiddler tool <span class="about-icon">{{$:/core/images/right-arrow}}</span> or page tool <span class="about-icon">{{$:/plugins/TWaddle/SideEditor/new-icon}}</span>
+*''Activate'' EdgeScribe by clicking the tiddler tool <span class="about-icon">{{$:/core/images/right-arrow}}</span> or page tool <span class="about-icon">{{$:/plugins/Speff/EdgeScribe/button-new-icon}}</span>
 *''Re-size'' it via the "handle bars" at upper-right and lower-left corner
-*''Switch focus'' between //Sidebar, ~~River~~// and //SideEditor// by ''hovering''
+*''Switch focus'' between //Sidebar, ~~River~~// and //EdgeScribe// by ''hovering''
 
 ''Split-out window'' &nbsp; <span class="about-icon">{{$:/core/images/open-window}}</span>
 
@@ -21,24 +21,24 @@ You see the changes //live// in the tiddler and you can scroll to, and reference
 
 //Mat von TWaddle// <:-)<br>
 
-{{$:/plugins/Speff/SideEditorV2 || $:/core/ui/Components/plugin-info}}
+{{$:/plugins/Speff/EdgeScribe || $:/core/ui/Components/plugin-info}}
 
 ----------------------
 
 !! ---Changes + Updates---
 * Now able to open+edit multiple tiddlers in their own popped out windows<br>^^my main motivation for the refactor^^
-* Ctrl+Enter while editing a tiddler saves/closes the SideEditor
-* Cursor focuses on SideEditor window when opened
+* Ctrl+Enter while editing a tiddler saves/closes the EdgeScribe
+* Cursor focuses on EdgeScribe window when opened
 * Added logic to prevent a new tiddler from overwriting an existing one
 ** Default behavior is to ignore the user-provided title on name clash
-** This can be changed in the new Settings menu (under [[$:/ControlPanel]] -> Settings -> SideEditorV2)
+** This can be changed in the new Settings menu (under [[$:/ControlPanel]] -> Settings -> EdgeScribe)
 * Added the ability to change the default tiddler type when making a new one through the Add button (also in the Settings menu)
 * Added new ViewToolbar and PageToolbar buttons to directly open tiddler editor in a new window
 ** Enable them in the [[$:/ControlPanel]] (Appearance->Toolbars->Page|View Toolbar)
 
 !!! Removed functionality
 * Cannot edit tiddlers tagged as `$:/tags/Macro` or `$:/tags/Global`
-* Sidebar does not appear in front of SideEditor on hover
+* Sidebar does not appear in front of EdgeScribe on hover
 
 //Speff//
 

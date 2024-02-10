@@ -1,15 +1,15 @@
-title: $:/plugins/Speff/SideEditorV2/button-edit-nw
+title: $:/plugins/Speff/EdgeScribe/button-edit-nw
 tags: $:/tags/ViewToolbar
-caption: {{$:/core/images/right-arrow}} SideEditorV2 popup
+caption: {{$:/core/images/right-arrow}} EdgeScribe popup
 description: A live editor floating above the story river...
-list-after: $:/plugins/Speff/SideEditorV2/button-edit
+list-after: $:/plugins/Speff/EdgeScribe/button-edit
 
 \whitespace trim
 <% if [<currentTiddler>!tag[$:/tags/Macro]!tag[$:/tags/Global]] %>
 <$button class=<<tv-config-toolbar-class>> tooltip="Open in a popup window">
-    <$action-deletefield $tiddler=`$:/state/SideEditorV2/$(currentTiddler)$` display />
+    <$action-deletefield $tiddler=`$:/state/EdgeScribe/$(currentTiddler)$` display />
     <$transclude $variable="open-window" toedit=<<currentTiddler>>/>
-    {{$:/plugins/Speff/SideEditorV2/button-edit-nw-icon}}
+    {{$:/plugins/Speff/EdgeScribe/button-edit-nw-icon}}
 </$button>
 <% endif %>
 
